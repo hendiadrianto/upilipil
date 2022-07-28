@@ -7,11 +7,14 @@ fun String.resetFormat(): String {
     return re.replace(this, "")
 }
 
-fun String.decimalFormat(): String {
+fun String.decimalFormat(currency : String = ""): String {
     val decimalFormat = DecimalFormat("#,###")
+    if (currency.isNotEmpty()){
+        return "$currency ${decimalFormat.format(this.toInt())}"
+    }
     return decimalFormat.format(this.toInt())
 }
 
 fun String?.replacePointCommaWithEmptyString() : String {
-    return this?.resetFormat() ?: ""
+    return this?.replace(".","")?.replace(",","") ?: ""
 }

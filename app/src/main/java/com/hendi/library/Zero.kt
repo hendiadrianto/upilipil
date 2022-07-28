@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.hendi.upilipil.decimalFormat
 import com.hendi.upilipil.orZero
 
 class Zero : AppCompatActivity() {
@@ -18,6 +19,7 @@ class Zero : AppCompatActivity() {
         setContentView(R.layout.main_layout)
 
         val edit = findViewById<EditText>(R.id.edittext)
+        val dec = "1000".decimalFormat("Rp")
 
         edit.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
