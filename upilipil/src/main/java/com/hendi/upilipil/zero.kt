@@ -23,3 +23,7 @@ fun Byte?.orZero(): Byte {
 fun Short?.orZero(): Short {
     return this ?: 0
 }
+
+fun String?.orZero(): String {
+    return this ?: "0"
+}

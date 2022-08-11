@@ -19,7 +19,10 @@ class Zero : AppCompatActivity() {
         setContentView(R.layout.main_layout)
 
         val edit = findViewById<EditText>(R.id.edittext)
-        val dec = "1000".decimalFormat("Rp")
+        val nulable = null
+        val dec = nulable.decimalFormat("Rp")
+
+        println("dec : ${dec.orZero()}")
 
         edit.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
